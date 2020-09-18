@@ -105,8 +105,8 @@ public class Main {
 		double[] delBarrioMaterialPrice = askForPrice(sc,materialName);
 		String[] storeBestPrice = Operations.storeBestPrice(homeCenterMaterialPrice,delCentroMaterialPrice,delBarrioMaterialPrice);
 		double[] bestPriceValue = Operations.bestPriceValue(homeCenterMaterialPrice,delCentroMaterialPrice,delBarrioMaterialPrice);
-		String[] blackJobConstructionUtilization = Operations.utilization(materialName,materialUtilization,1);
-		String[] whiteJobConstructionUtilization = Operations.utilization(materialName,materialUtilization,2);
+		String[] roughConstructionUtilization = Operations.utilization(materialName,materialUtilization,1);
+		String[] finalConstructionUtilization = Operations.utilization(materialName,materialUtilization,2);
 		String[] paintingUtilization = Operations.utilization(materialName,materialUtilization,3);
 		System.out.println(" ");
 		System.out.println("El total a pagar para HomeCenter es: "+Operations.totalToPay(homeCenterMaterialPrice,materialQuantity,ubication));
@@ -117,12 +117,12 @@ public class Main {
 		}
 		System.out.println("Si compra con los mejores precios, debera pagar "+Operations.bestPriceTotal(bestPriceValue,ubication,materialQuantity));
 		System.out.println("Los productos utilizados para la obra negra son: ");
-		for(int i=0;i<blackJobConstructionUtilization.length;i++){
-			System.out.println(blackJobConstructionUtilization[i]);	
+		for(int i=0;i<roughConstructionUtilization.length;i++){
+			System.out.println(roughConstructionUtilization[i]);	
 		}
 		System.out.println("Los productos utilizados para la obra blanca son: ");
-		for(int i=0;i<whiteJobConstructionUtilization.length;i++){
-			System.out.println(whiteJobConstructionUtilization[i]);	
+		for(int i=0;i<finalConstructionUtilization.length;i++){
+			System.out.println(finalConstructionUtilization[i]);	
 		}
 		System.out.println("Los productos utilizados para la pintura son: ");
 		for(int i=0;i<paintingUtilization.length;i++){
